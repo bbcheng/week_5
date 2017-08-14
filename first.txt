@@ -1,0 +1,7 @@
+mysql> use firstdemo;
+Database changed
+mysql> create table first
+    -> (fir_id INT);
+Query OK, 0 rows affected
+
+mysql> 

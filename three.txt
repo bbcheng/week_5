@@ -1,0 +1,6 @@
+mysql> use firstdemo;
+Database changed
+mysql> drop table first;
+Query OK, 0 rows affected
+
+mysql> 

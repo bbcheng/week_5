@@ -1,0 +1,35 @@
+mysql> use zc;
+Database changed
+mysql> create table two
+    -> (title char(20) not null,
+    -> authoe char(20) not null,
+    -> time char(40) not null,
+    -> primary key(title))
+    -> engine = innodb default
+    -> charset = utf8;
+Query OK, 0 rows affected
+
+mysql> show tables;
++--------------+
+| Tables_in_zc |
++--------------+
+| fir          |
+| two          |
++--------------+
+2 rows in set
+
+mysql> insert into two
+    -> (title, authoe, time)
+    -> values
+    -> ("mysql", "zc", '2017-8-13');
+Query OK, 1 row affected
+
+mysql> select * from two;
++-------+--------+-----------+
+| title | authoe | time      |
++-------+--------+-----------+
+| mysql | zc     | 2017-8-13 |
++-------+--------+-----------+
+1 row in set
+
+mysql> 

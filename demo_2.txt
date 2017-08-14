@@ -1,0 +1,95 @@
+mysql> use zc;
+Database changed
+mysql> insert into two
+    -> (title, authoe, time)
+    -> values
+    -> ("mysql1", "zzz", "2016-5-20");
+Query OK, 1 row affected
+
+mysql> insert into two
+    -> (title, authoe, time)
+    -> values
+    -> ("mysql2", "ccc", "2016-8-20");
+1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> (title, authoe, time)
+    -> values
+    -> ("mysql2", "ccc", "2016-8-20")' at line 2
+mysql> sleect * from two;
+1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sleect * from two' at line 1
+mysql> select * from two;
++--------+--------+-----------+
+| title  | authoe | time      |
++--------+--------+-----------+
+| mysql  | zc     | 2017-8-13 |
+| mysql1 | zzz    | 2016-5-20 |
++--------+--------+-----------+
+2 rows in set
+
+mysql> insert into two
+    -> (title, authoe, time)
+    -> values
+    -> ("sql", "xyz", "2018-9-9");
+Query OK, 1 row affected
+
+mysql> select * from two;
++--------+--------+-----------+
+| title  | authoe | time      |
++--------+--------+-----------+
+| mysql  | zc     | 2017-8-13 |
+| mysql1 | zzz    | 2016-5-20 |
+| sql    | xyz    | 2018-9-9  |
++--------+--------+-----------+
+3 rows in set
+
+mysql> select title from two;
++--------+
+| title  |
++--------+
+| mysql  |
+| mysql1 |
+| sql    |
++--------+
+3 rows in set
+
+mysql> select * from two
+    -> where authoe = "zc";
++-------+--------+-----------+
+| title | authoe | time      |
++-------+--------+-----------+
+| mysql | zc     | 2017-8-13 |
++-------+--------+-----------+
+1 row in set
+
+mysql> select * from two
+    -> order by time;
++--------+--------+-----------+
+| title  | authoe | time      |
++--------+--------+-----------+
+| mysql1 | zzz    | 2016-5-20 |
+| mysql  | zc     | 2017-8-13 |
+| sql    | xyz    | 2018-9-9  |
++--------+--------+-----------+
+3 rows in set
+
+mysql> drop table fir;
+Query OK, 0 rows affected
+
+mysql> show tables
+    -> ;
++--------------+
+| Tables_in_zc |
++--------------+
+| two          |
++--------------+
+1 row in set
+
+mysql> select * from two;
++--------+--------+-----------+
+| title  | authoe | time      |
++--------+--------+-----------+
+| mysql  | zc     | 2017-8-13 |
+| mysql1 | zzz    | 2016-5-20 |
+| sql    | xyz    | 2018-9-9  |
++--------+--------+-----------+
+3 rows in set
+
+mysql> 

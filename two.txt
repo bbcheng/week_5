@@ -1,0 +1,40 @@
+mysql> use zc;
+Database changed
+mysql> create table fir
+    -> (id int not null,
+    -> titlt char(20) not null,
+    -> author char(20) not null,
+    -> primary key (id));
+Query OK, 0 rows affected
+
+mysql> show tables;
++--------------+
+| Tables_in_zc |
++--------------+
+| fir          |
++--------------+
+1 row in set
+
+mysql> select * from fir;
+Empty set
+
+mysql> insert into fir
+    -> (id,title,author)
+    -> values
+    -> ("navucat","mysql","张成");
+1054 - Unknown column 'title' in 'field list'
+mysql>  insert into fir
+    -> (id,titlt,author)
+    -> values
+    -> ("navucat","mysql","张成");
+1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> (id,titlt,author)
+    -> values
+    -> ("navucat","mysql","张成")' at line 2
+mysql>  insert into fir
+    -> (id,titlt,author)
+    -> values
+    -> (123,"mysql","张成");
+1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> (id,titlt,author)
+    -> values
+    -> (123,"mysql","张成")' at line 2
+mysql> 
